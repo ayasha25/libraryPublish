@@ -8,7 +8,7 @@ import io.reactivex.rxjava3.core.Single;
 import io.reactivex.rxjava3.core.SingleObserver;
 
 public class AyashaMessage {
-    Single res = new Single() {
+   static Single res = new Single() {
         @Override
         protected void subscribeActual(@NonNull SingleObserver observer) {
 
@@ -16,5 +16,6 @@ public class AyashaMessage {
     };
     public static void s (Context context) {
         Toast.makeText(context,"hey",Toast.LENGTH_SHORT).show();
+        res.blockingSubscribe();
     }
 }
